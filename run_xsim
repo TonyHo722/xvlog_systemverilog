@@ -1,0 +1,8 @@
+source /SSD1T/opt/Xilinx/Vivado/2022.2/settings64.sh
+xvlog xvlog_tb.v
+xelab -top xvlog_tb -snapshot xvlog_tb_elab
+xsim xvlog_tb_elab -R
+mv xvlog.log xvlog-v.log
+mv xelab.log xelab-v.log
+mv xsim.log xsim-v.log
+
