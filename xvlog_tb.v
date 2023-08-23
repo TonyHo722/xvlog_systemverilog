@@ -29,10 +29,6 @@ module xvlog_tb;
 
 	wire sys_clk = clock;
 	wire sys_rst = ~RSTB;
-	reg state = 1'd0;
-	reg next_state = 1'd0;
-	reg mgmtsoc_wishbone_cyc;
-	reg mgmtsoc_wishbone_stb;
 
 	initial begin
 		$dumpfile("xvlog.vcd");
@@ -77,14 +73,6 @@ module xvlog_tb;
         $display($time, "=> dump la_out_storage=%x", la_out_storage);
     end    
 
-
-    always @(posedge sys_clk) begin
-        state <= next_state;
-        if (sys_rst) begin
-            state <= 0;
-        end
-        
-    end
 
 endmodule
 `default_nettype wire
